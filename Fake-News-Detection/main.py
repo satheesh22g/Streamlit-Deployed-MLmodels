@@ -22,10 +22,6 @@ with open('Fake-News-Detection/pac_model.pkl', 'rb') as f:
 
 if st.checkbox('Show Training Dataframe'):
     data
-text = st.text_input("Enter the text")
-
-if st.checkbox('Show Training Dataframe'):
-    data
 text = st.text_input("Enter the text",key="text")
 
 if st.button('Make Prediction'):
