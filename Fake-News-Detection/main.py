@@ -25,7 +25,7 @@ if st.checkbox('Show Training Dataframe'):
 text = st.text_input("Enter the text")
 
 if st.button('Make Prediction'):
-    input_text = tfidf.transform(text)
+    input_text = tfidf.transform([text])
     prediction = pac.predict(input_text)
     print("final pred", np.squeeze(prediction, -1))
     st.write(f"Your fish weight is: {np.squeeze(prediction, -1):.2f}g")
