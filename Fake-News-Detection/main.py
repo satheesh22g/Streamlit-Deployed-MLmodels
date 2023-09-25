@@ -13,11 +13,11 @@ st.header("Fake News Detection app")
 st.text_input("Enter your Name: ", key="name")
 
 tfid = TfidfVectorizer()
-with open('tfidf.pkl', 'rb') as f:
+with open('Fake-News-Detection/tfidf.pkl', 'rb') as f:
     tfidf = pickle.load(f)
 
 clf = PassiveAggressiveClassifier()
-with open('pac_model.pkl', 'rb') as f:
+with open('Fake-News-Detection/pac_model.pkl', 'rb') as f:
     pac = pickle.load(f)
 
 if st.checkbox('Show Training Dataframe'):
