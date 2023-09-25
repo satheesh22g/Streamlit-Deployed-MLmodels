@@ -24,10 +24,14 @@ if st.checkbox('Show Training Dataframe'):
     data
 text = st.text_input("Enter the text")
 
+if st.checkbox('Show Training Dataframe'):
+    data
+text = st.text_input("Enter the text")
+
 if st.button('Make Prediction'):
     input_text = tfidf.transform([text])
     prediction = pac.predict(input_text)
-    print("final pred", np.squeeze(prediction, -1))
-    st.write(f"Your fish weight is: {np.squeeze(prediction, -1):.2f}g")
+    s=str(np.squeeze(prediction, -1))
+    st.write("It is look like fake:",s)
 
     st.write(f"Thank you {st.session_state.name}! I hope you liked it.")
