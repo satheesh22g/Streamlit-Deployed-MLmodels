@@ -26,7 +26,7 @@ text = st.text_input("Enter the text")
 
 if st.checkbox('Show Training Dataframe'):
     data
-text = st.text_input("Enter the text")
+text = st.text_input("Enter the text",key="text")
 
 if st.button('Make Prediction'):
     input_text = tfidf.transform([text])
