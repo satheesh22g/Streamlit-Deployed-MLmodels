@@ -28,6 +28,6 @@ if st.button('Make Prediction'):
     input_text = tfidf.transform([text])
     prediction = pac.predict(input_text)
     s=str(np.squeeze(prediction, -1))
-    st.write("It is look like fake:",s)
+    st.write("It is look like: ",s)
 
     st.write(f"Thank you {st.session_state.name}! I hope you liked it.")
