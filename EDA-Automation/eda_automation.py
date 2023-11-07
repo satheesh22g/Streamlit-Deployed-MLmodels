@@ -133,7 +133,13 @@ if choice == 'General EDA':
 
 			if st.checkbox("Show Columns"):
 				st.write(df.columns)
+			if st.checkbox("Numerical Variables"):
+				n_cols = [x for x in df.select_dtypes(exclude=['object'])]
+				st.dataframe(df[n_cols])
 
+			if st.checkbox("Categorical Variables"):
+				c_cols = [x for x in df.select_dtypes(include=['object'])]
+				st.dataframe(df[c_cols])
 			if st.checkbox("Show Missing"):
 				st.write(df.isna().sum())
 
@@ -150,13 +156,7 @@ if choice == 'General EDA':
 				st.write(df.describe().T)
 
 
-			if st.checkbox("Numerical Variables"):
-				n_cols = [x for x in df.select_dtypes(exclude=['object'])]
-				st.dataframe(df[n_cols])
 
-			if st.checkbox("Categorical Variables"):
-				c_cols = [x for x in df.select_dtypes(include=['object'])]
-				st.dataframe(df[c_cols])
 
 			if st.checkbox("DropNA"):
 				temp_df = df.dropna()
